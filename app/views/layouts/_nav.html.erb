@@ -1,13 +1,5 @@
-<div id="header" class="header">
-<div class="logodiv">
-</div>
-<div class="filter">
-<nav>
-<a href="/home.html">HOME</a>
-<span class="footdogs">  / </span>
-<a href="/about.html">EXPLORE</a>
-</nav>
-</div>
-</div>
-</div>
-<!-- Begin content -->
+<% if !user_signed_in? %>
+  <%= render '/layouts/nav_guest' %>
+<% else %>
+  <%= render '/layouts/nav_user' %>
+<% end %>

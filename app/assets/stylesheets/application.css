@@ -1,15 +1,251 @@
+@charset "UTF-8";
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+=============================
+    _   ______  ____  ______
+   / | / / __ \/ __ \/ ____/
+  /  |/ / / / / / / / __/
+ / /|  / /_/ / /_/ / /___
+/_/ |_/\____/_____/_____/
+
+=============================
+*/
+@font-face {
+  font-family: "Share Tech Mono";
+  src: url("https://n-o-d-e.hashbase.io/fonts/font.eot");
+  src: local("â˜º"), url("https://n-o-d-e.hashbase.io/fonts/font.woff") format("woff"), url("https://n-o-d-e.hashbase.io/fonts/font.ttf") format("truetype"), url("https://n-o-d-e.hashbase.io/fonts/font.svg") format("svg"); }
+:root {
+  --minimum-size: 24;
+  --maximum-size: 44;
+  --fluid-font: calc((var(--minimum-size) * 1px ) + (var(--maximum-size) - var(--maximum-size)) * ((100vw -
+  300px) / (1900 - 300))); }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Share Tech Mono", Monospace, Courier;
+  font-weight: 400;
+  font-size: var(--fluid-font);
+  color: #C8C8C8;
+  background: #222222; }
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+pre {
+  padding: 0;
+  margin: 0 0 50px 0; }
+
+ul {
+  padding: 0; }
+
+span {
+  padding: 0;
+  margin: 0 10px 0 0; }
+
+li {
+  margin: 0px 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--fluid-font); }
+
+a {
+  text-decoration: none;
+  color: #C8C8C8; }
+
+a:hover {
+  color: #C8C8C8;
+  text-decoration: underline; }
+
+p {
+  padding: 0;
+  margin: 10px 0 30px 0; }
+
+img {
+  width: 900px;
+  max-width: 900px;
+  margin-bottom: 20px; }
+
+#page {
+  max-width: 900px;
+  min-height: 500px;
+  margin: auto;
+  padding: 0 20px; }
+
+#content {
+  max-width: 100%;
+  margin: auto; }
+
+#footer {
+  max-width: 900px;
+  margin: auto;
+  margin-top: 55px; }
+
+.header {
+  width: 100%;
+  margin: auto;
+  margin-bottom: 50px;
+  border-bottom: dotted 1px #ffffff; }
+
+.footer {
+  height: 66px;
+  width: 100%;
+  margin: auto;
+  margin-top: 50px;
+  border-top: dotted 1px #ffffff; }
+
+.logodiv {
+  max-width: 900px;
+  margin: auto;
+  padding: 0 20px; }
+
+.logo {
+  width: 82px;
+  margin: auto;
+  margin-top: 20px; }
+
+#list {
+  margin-bottom: 50px; }
+
+#post {
+  max-width: 900px;
+  margin-bottom: 20px;
+  margin-top: -10px;
+  line-height: 16pt; }
+
+.categories {
+  max-width: 300px;
+  right: 0;
+  margin: 40px 60px 0 0;
+  position: fixed;
+  background: #222222;
+  text-align: right;
+  z-index: 0; }
+
+@media all and (max-width: 1000px) and (min-width: 20px) {
+  .categories {
+    visibility: hidden; }
+
+  .catbox {
+    visibility: hidden; } }
+.catbox {
+  width: 300px;
+  height: 160px;
+  right: 0;
+  margin: 0;
+  position: absolute;
+  background: #222222;
+  display: block;
+  z-index: 999; }
+
+.footdogs {
+  margin: 0 5px; }
+
+.tag {
+  color: #C8C8C8; }
+
+.notification {
+  color: #222222;
+  background: #ffffff; }
+
+.important {
+  margin-left: -18px; }
+
+.title {
+  font-size: calc(4 * var(--fluid-font));
+  display: inline-block;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #ffffff; }
+
+h1,
+h2,
+h3 {
+  color: #ffffff; }
+
+h1 {
+  font-size: calc(3 * var(--fluid-font) / 2); }
+
+h2 {
+  font-size: calc(5 * var(--fluid-font) / 4); }
+
+h3 {
+  font-size: calc(7 * var(--fluid-ifont) / 6); }
+
+.shoptitle {
+  display: inline-block;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  position: fixed; }
+
+.subtitle {
+  display: inline-block;
+  margin: 20px 0;
+  color: #ffffff; }
+
+.code {
+  max-width: 900px;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  background: #1f1f1f;
+  padding: 20px;
+  margin: 10px 0 30px 0; }
+
+.shop {
+  max-width: 900px;
+  margin: -10px 0 40px 0; }
+
+.codesmall {
+  background: #1f1f1f;
+  display: inline-block; }
+
+.filter {
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 5pt;
+  text-align: right; }
+
+.description {
+  background: #1f1f1f;
+  padding: 10px 0 10px 10px;
+  margin-top: 0px; }
+
+.videowrapper {
+  position: relative;
+  padding-bottom: 56.45%;
+  height: 0; }
+
+video {
+  max-width: 100%; }
+
+@media only screen and (max-width: 700px) {
+  img {
+    width: 100%; }
+
+  .hide {
+    display: none; } }
+@media only screen and (min-width: 700px) {
+  .show {
+    display: none; } }
+.foot {
+  max-width: 900px;
+  width: 100%;
+  margin: auto;
+  padding: 0 20px;
+  margin-bottom: 50px;
+  font-family: "Share Tech Mono", Monospace, Courier; }
+
+.col-4 {
+  column-count: 4;
+  font-size: calc(var(--fluid-font) / 3 * 2);
+  min-height: 1px; }
+
+nav {
+  max-width: 75%;
+  display: inline-block; }
+
+textarea {
+  resize: none; }
+
+/*# sourceMappingURL=main.css.map */

@@ -1,4 +1,3 @@
-<div id="header" class="header">
 <div class="logodiv">
 </div>
 <div class="filter">
@@ -9,9 +8,10 @@
 <span class="footdogs">  / </span>
 <%= link_to('LOGOUT', destroy_user_session_path, :method => :delete) %>
 <span class="footdogs">  / </span>
-<%= link_to('PROFILE', edit_user_registration_path) %>
+<a href="/user/<%= current_user.username %>">ME</a>
+<span class="footdogs">  / </span>
+<%= link_to(current_user.username, edit_user_registration_path) %>
 </nav>
-</div>
 </div>
 </div>
 <!-- Begin content -->

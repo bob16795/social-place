@@ -81,11 +81,10 @@ img {
   margin: auto;
   margin-top: 55px; }
 
-.header {
+#header {
+  max-width: 900px;
   width: 100%;
-  margin: auto;
-  margin-bottom: 50px;
-  border-bottom: dotted 1px #ffffff; }
+  }
 
 .footer {
   height: 66px;

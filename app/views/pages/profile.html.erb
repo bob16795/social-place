@@ -1,2 +1,13 @@
-<h1>Pages#profile</h1>
-<p>Find me in app/views/pages/profile.html.erb</p>
+<h1>
+  <%= @username %>
+</h1>
+<h2> posts </h2>
+    <%= render "/components/post_form"%>
+    <% for @p in @posts %>
+      <%= render "/components/post"%>
+    <% end %>
+<h2> info </h2>
+<%= render "/components/follow_button", :user => User.find_by_username(params[:id])%>
+<p> followers: <%= User.find_by_username(params[:id]).followers.count %> </p> 
+<p> following: <%= User.find_by_username(params[:id]).following.count %> </p> 
+<h2> suggestions </h2>

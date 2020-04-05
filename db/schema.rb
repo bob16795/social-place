@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_04_05_120256) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"
     t.integer "post_id"
@@ -24,10 +27,10 @@ ActiveRecord::Schema.define(version: 2020_04_05_120256) do
 
   create_table "posts", force: :cascade do |t|
     t.text "content"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index "\"user_id\", \"content_at\"", name: "index_posts_on_user_id_and_content_at"
+    t.index ["user_id", "content"], name: "index_posts_on_user_id_and_content"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 

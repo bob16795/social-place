@@ -3,7 +3,6 @@
     <a href="/user/<%= User.find(@p.user.id).username %>"><%= User.find(@p.user.id).username %></a> - <%= @p.created_at.to_formatted_s(:short) %> - <%= @p.likes.count %> Likes
     <br />
     <%= @p.content %>
-    <br />
     <%= render "/components/like_button"%>
   </p>
 </div>

@@ -29,11 +29,11 @@ class User < ApplicationRecord
     active_likes.create(post_id: other.id)
   end
 
-  def unfollow(other)
+  def unlike(other)
     active_likes.find_by(post_id: other.id).destroy
   end
 
-  def likeing?(other)
-    likes.include?(other)
+  def likes?(other)
+    active_likes.find_by(post_id: other.id) != nil
   end
 end

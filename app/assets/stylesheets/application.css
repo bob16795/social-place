@@ -81,10 +81,12 @@ img {
   margin: auto;
   margin-top: 55px; }
 
-#header {
-  max-width: 900px;
+.header {
+  height: 66px;
   width: 100%;
-  }
+  margin: auto;
+  margin-bottom: 50px;
+  border-bottom: dotted 1px #ffffff; }
 
 .footer {
   height: 66px;
@@ -201,8 +203,8 @@ h3 {
 
 .filter {
   display: block;
-  margin-bottom: 5px;
-  margin-top: 5pt;
+  margin-bottom: 30px;
+  margin-top: -36pt;
   text-align: right; }
 
 .description {
@@ -229,6 +231,7 @@ video {
     display: none; } }
 .foot {
   max-width: 900px;
+  height: 66px;
   width: 100%;
   margin: auto;
   padding: 0 20px;

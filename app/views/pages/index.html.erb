@@ -3,12 +3,12 @@
   <p>
   Welcome to the social place
   </p>
-  <h2> login </h2>
-  <div class="login">
+  <div>
+  <%= link_to('LOGIN', new_user_session_path) %>
   </div>
-  <h2> signup </h2>
-  <div class="signup">
+  <div>
+  <%= link_to('SIGNUP', new_user_registration_path) %>
   </div>
 <% else %>
-    <script>document.location = "/home" </script>
+  <script>document.location = "/home" </script>
 <% end %>

@@ -11,3 +11,8 @@
 <p> followers: <%= User.find_by_username(params[:id]).followers.count %> </p> 
 <p> following: <%= User.find_by_username(params[:id]).following.count %> </p> 
 <h2> suggestions </h2>
+<% for @f in User.find_by_username(params[:id]).following %>
+  <a href="/user/<%= @f.username%>">
+    <%= @f.username %>
+  </a>
+<% end %>

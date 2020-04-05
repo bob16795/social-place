@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  
+  config.relative_url_root = ""  
   before_action :configure_permitted_parameters, if: :devise_controller?
   
   protected

@@ -7,4 +7,11 @@ class Post < ApplicationRecord
   has_many :passive_likes, class_name: "Like", foreign_key: "post_id", dependent: :destroy
 
   has_many :likes, through: :passive_likes, source: :post
+  def self.search(search)
+    if search
+      where("content LIKE ?", "%#{search}%")
+    else
+      where("content LIKE ?", "%")
+    end
+  end
 end

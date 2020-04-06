@@ -36,4 +36,11 @@ class User < ApplicationRecord
   def likes?(other)
     active_likes.find_by(post_id: other.id) != nil
   end
+  def self.search(search)
+    if search
+      where("username LIKE ?", "%#{search}%")
+    else
+      where("username LIKE ?", "%")
+    end
+  end
 end

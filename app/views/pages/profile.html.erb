@@ -1,13 +1,13 @@
 <h1>
   <%= @username %>
 </h1>
+<%= render "/components/follow_button", :user => User.find_by_username(params[:id])%>
 <h2> posts </h2>
     <%= render "/components/post_form"%>
     <% for @p in @posts %>
       <%= render "/components/post"%>
     <% end %>
 <h2> info </h2>
-<%= render "/components/follow_button", :user => User.find_by_username(params[:id])%>
 <p> followers: <%= User.find_by_username(params[:id]).followers.count %> </p> 
 <p> following: <%= User.find_by_username(params[:id]).following.count %> </p> 
 <h2> suggestions </h2>

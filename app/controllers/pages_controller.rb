@@ -27,4 +27,14 @@ class PagesController < ApplicationController
     @newPost = Post.new
   
   end
+
+  def search
+    if params[:search]
+      @posts = Post.search(params[:search])
+      @users = User.search(params[:search])
+      @search = true
+    else
+      @search = false
+    end
+  end
 end

@@ -1,0 +1,14 @@
+<% if @search %>
+  <h2> posts </h2>
+  <% for @p in @posts %>
+    <%= render "/components/post"%>
+  <% end %>
+  <h2> users </h2>
+  <% for @u in @users %>
+    <a href="/user/<%= @u.username%>">
+      <%= @u.username %>
+    </a>
+  <% end %>
+<% else %>
+  <%= render "/components/search_form"%> 
+<% end %>

@@ -14,8 +14,8 @@ class PostsController < ApplicationController
       end
     end
   end
-
   private
+
   def post_param
     params.require(:post).permit(:User_id, :content)
   end

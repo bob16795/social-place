@@ -12,7 +12,7 @@
 @font-face {
   font-family: "Share Tech Mono";
   src: url("https://n-o-d-e.hashbase.io/fonts/font.eot");
-  src: local("â˜º"), url("https://n-o-d-e.hashbase.io/fonts/font.woff") format("woff"), url("https://n-o-d-e.hashbase.io/fonts/font.ttf") format("truetype"), url("https://n-o-d-e.hashbase.io/fonts/font.svg") format("svg"); }
+  src: local("â˜º"), url("/fonts/font.woff") format("woff");}
 :root {
   --minimum-size: 24;
   --maximum-size: 44;
@@ -55,7 +55,8 @@ a {
 
 a:hover {
   color: #C8C8C8;
-  text-decoration: underline; }
+  text-decoration: underline;
+}
 
 p {
   padding: 0;
@@ -251,7 +252,10 @@ textarea {
   resize: none; }
 
 /*# sourceMappingURL=main.css.map */
-
+/*# sourceMappingURL=main.css.map */
+form {
+  display: inline;
+}
 input[type="submit"], input[type="submit"]:focus{
   align-items: normal;
   background-color: rgba(0,0,0,0);
@@ -271,10 +275,13 @@ input[type="submit"], input[type="submit"]:focus{
   -moz-appearance: none;
   -webkit-logical-height: 1em; /* Chrome ignores auto, so we have to use this hack to set the correct height  */
   -webkit-logical-width: auto; /* Chrome ignores auto, but here for completeness */
+  font-weight: 400;
 }
 
 input[type="submit"]:hover { /* add outline to focus pseudo-class */
   text-decoration: underline;
+  border-style: none;
+  font-weight: 400;
 }
 /* Mozilla uses a pseudo-element to show focus on buttons, */
 /* but anchors are highlighted via the focus pseudo-class. */
@@ -288,4 +295,12 @@ input[type="submit"]:hover { /* add outline to focus pseudo-class */
     outline-style: dotted;
     outline-width: 1px;
   }
+}
+body {
+    padding-bottom: 100px;
+}
+.post, .post-form, .search-section, .head-nav, .info, .sug{
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #111111;
 }

@@ -1,14 +1,8 @@
 <nav>
-<a href="/">HOME</a>
-<span class="footdogs">  / </span>
 <a href="/explore.html">EXPLORE</a>
 <span class="footdogs">  / </span>
 <a href="/search.html">SEARCH</a>
 <span class="footdogs">  / </span>
-<%= link_to('LOGOUT', destroy_user_session_path, :method => :delete) %>
-<span class="footdogs">  / </span>
-<a href="/user/<%= current_user.username %>">ME</a>
-<span class="footdogs">  / </span>
-<%= link_to(current_user.username, edit_user_registration_path) %>
+<%= link_to('ME', edit_user_registration_path) %>
 </nav>
 <!-- Begin content -->

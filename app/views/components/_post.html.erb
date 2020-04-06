@@ -1,8 +1,5 @@
 <div class="post">
-  <p>
     <a href="/user/<%= User.find(@p.user.id).username %>"><%= User.find(@p.user.id).username %></a> - <%= @p.created_at.to_formatted_s(:short) %> - <%= @p.likes.count %> Likes
-    <br />
     <%= markdown(@p.content).html_safe %>
-    <%= render "/components/like_button"%>
-  </p>
+    <%= render "/components/like_button"%><a href="/post/<%= @p.id%>"> VIEW </a>
 </div>

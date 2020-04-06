@@ -1,18 +1,28 @@
 <h1>
   <%= @username %>
 </h1>
+<div class="head-nav">
+  <a href="#posts">POSTS</a><br />
+  <a href="#info">INFO</a><br />
+  <a href="#suggestions">SUGGESTIONS</a><br />
+</div>
 <%= render "/components/follow_button", :user => User.find_by_username(params[:id])%>
-<h2> posts </h2>
+<h2 id="posts">posts</h2>
     <%= render "/components/post_form"%>
     <% for @p in @posts %>
       <%= render "/components/post"%>
     <% end %>
-<h2> info </h2>
-<p> followers: <%= User.find_by_username(params[:id]).followers.count %> </p> 
-<p> following: <%= User.find_by_username(params[:id]).following.count %> </p> 
-<h2> suggestions </h2>
-<% for @f in User.find_by_username(params[:id]).following %>
-  <a href="/user/<%= @f.username%>">
-    <%= @f.username %>
-  </a>
-<% end %>
+<h2 id="info">INFO</h2>
+<div class="info">
+  <p> followers: <%= User.find_by_username(params[:id]).followers.count %> </p> 
+  <p> following: <%= User.find_by_username(params[:id]).following.count %> </p>
+  <p> posts: <%= @posts.count %> </p>
+</div>
+<h2 id="suggestions">SUGGESTIONS</h2>
+<div class="sug">
+  <% for @f in User.find_by_username(params[:id]).following %>
+    <a href="/user/<%= @f.username%>">
+      <%= @f.username %>
+    </a>
+  <% end %>
+</div>

@@ -1,5 +1,15 @@
-<div class="post">
-    <a href="/user/<%= User.find(@p.user.id).username %>"><%= User.find(@p.user.id).username %></a> - <%= @p.created_at.to_formatted_s(:short) %> - <%= @p.likes.count %> Likes
-    <%= markdown(@p.content).html_safe %>
-    <%= render "/components/like_button"%><a href="/post/<%= @p.id%>"> VIEW </a>
-</div>
+<% if user_signed_in? %>
+  <% if !current_user.blocking?(@p.user) %>
+    <div class="post">
+        <a href="/user/<%= @p.user.username %>"><%= @p.user.username %></a> - <%= @p.created_at.to_formatted_s(:short) %> - <%= @p.likes.count %> Likes
+        <%= markdown(@p.content).html_safe %>
+        <%= render "/components/like_button"%><a href="/post/<%= @p.id%>"> VIEW </a>
+    </div>
+  <% end %>
+<% else %>
+  <div class="post">
+      <a href="/user/<%= @p.user.username %>"><%= @p.user.username %></a> - <%= @p.created_at.to_formatted_s(:short) %> - <%= @p.likes.count %> Likes
+      <%= markdown(@p.content).html_safe %>
+      <%= render "/components/like_button"%><a href="/post/<%= @p.id%>"> VIEW </a>
+  </div>
+<% end %>

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :posts, :relationships, :likes
+  resources :posts, :relationships, :likes, :blocks
   root 'pages#index'
 
   get 'home' => 'pages#home'

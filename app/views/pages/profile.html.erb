@@ -5,8 +5,8 @@
   <a href="#posts">POSTS</a><br />
   <a href="#info">INFO</a><br />
   <a href="#suggestions">SUGGESTIONS</a><br />
+  <%= render "/components/manage_buttons", :user => User.find_by_username(params[:id])%>
 </div>
-<%= render "/components/follow_button", :user => User.find_by_username(params[:id])%>
 <h2 id="posts">posts</h2>
     <%= render "/components/post_form"%>
     <% for @p in @posts %>

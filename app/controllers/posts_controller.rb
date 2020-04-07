@@ -14,8 +14,14 @@ class PostsController < ApplicationController
       end
     end
   end
-  private
 
+  def destroy
+    post = Post.find(params[:post_id])
+    current_user.posts.find(post.id).destroy
+    redirect_back(fallback_location: root_path)
+  end
+
+  private
   def post_param
     params.require(:post).permit(:User_id, :content)
   end

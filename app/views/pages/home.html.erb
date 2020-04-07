@@ -1,9 +1,8 @@
 <h1> HOME </h1>
 <h2> posts </h2>
-
-    <%= render "/components/post_form"%>
-    <% for @p in @posts %>
-      <% if current_user.following? @p.user or @p.user == current_user or "@#{current_user.username} ".in? @p.content %>
-        <%= render "/components/post"%>
-      <% end %>
-    <% end %>
+<%= render "/components/post_form"%>
+<% for @p in @posts %>
+  <% if current_user.following? @p.user or @p.user == current_user or "@#{current_user.username} ".in? @p.content %>
+    <%= render "/components/post"%>
+  <% end %>
+<% end %>

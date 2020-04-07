@@ -1,30 +1,39 @@
-<div class="search-section">
+<h2>SEARCH</h2>
+<div class="box">
 <%= render "/components/search_form"%> 
 </div>
 <% if @search %>
   <% if @users.empty? and @posts.empty? and @search %>
-    <p>NO RESULTS FOUND</p>
+    <div class="box">
+      <h1>NO RESULTS FOUND</h1>
+    </div>
   <% else %>
     <h2>RESULTS</h2>
-  <% end %>
-  <% if !@posts.empty? %>
-    <div class="search-section">
-      <h3>POSTS</h3>
-      <% for @p in @posts %>
-        <a href="/post/<%= @p.id%>">
-          <%= @p.user.username%> - <%= @p.content[0..30] %> <br />
-        </a>
-      <% end %>
-    </div>
-  <% end %>
-  <% if !@users.empty? %>
-    <div class="search-section">
-      <h3>USERS</h3>
-      <% for @u in @users %>
-        <a href="/user/<%= @u.username%>">
-          <%= @u.username %> <br />
-        </a>
-      <% end %>
-    </div>
+    <% if !@posts.empty? %>
+      <div class="box">
+        <h3>POSTS</h3>
+        <% for @p in @posts %>
+            <a href="/user/<%= @p.user.username %>">
+            <%= @p.user.username %></a> - 
+            <a href="/post/<%= @p.id%>">
+            <%= @p.content[0..27] %>
+            <% if @p.content != @p.content[0..27] %>
+            ...
+            <%end%>
+            <br />
+          </a>
+        <% end %>
+      </div>
+    <% end %>
+    <% if !@users.empty? %>
+      <div class="box">
+        <h3>USERS</h3>
+        <% for @u in @users %>
+          <a href="/user/<%= @u.username%>">
+            <%= @u.username %> <br />
+          </a>
+        <% end %>
+      </div>
+    <% end %>
   <% end %>
 <% end %>

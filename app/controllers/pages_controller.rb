@@ -3,10 +3,8 @@ class PagesController < ApplicationController
   end
 
   def home
-  
     @posts = Post.all
     @newPost = Post.new
-  
   end
 
   def profile
@@ -18,6 +16,7 @@ class PagesController < ApplicationController
 
     @posts = Post.all.where("user_id = ?", User.find_by_username(params[:id]).id)
     @newPost = Post.new
+    @likes = Like.all.where("user_id = ?", User.find_by_username(params[:id]).id)
   end
 
   def post
@@ -25,10 +24,8 @@ class PagesController < ApplicationController
   end
 
   def explore
-    
     @posts = Post.all
     @newPost = Post.new
-  
   end
 
   def search

@@ -1,13 +1,15 @@
 <% if !user_signed_in? %>
   <h1> HELLO </h1>
-  <p>
-  Welcome to the social place
-  </p>
-  <div>
-  <%= link_to('LOGIN', new_user_session_path) %>
-  </div>
-  <div>
-  <%= link_to('SIGNUP', new_user_registration_path) %>
+  <div class="box">
+    <p>
+    Welcome to the social place
+    </p>
+    <div>
+    <%= link_to('LOGIN', new_user_session_path) %>
+    </div>
+    <div>
+    <%= link_to('SIGNUP', new_user_registration_path) %>
+    </div>
   </div>
 <% else %>
   <script>document.location = "/home" </script>

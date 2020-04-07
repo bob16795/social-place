@@ -299,7 +299,7 @@ input[type="submit"]:hover { /* add outline to focus pseudo-class */
 body {
     padding-bottom: 100px;
 }
-.post, .post-form, .search-section, .head-nav, .info, .sug{
+.box{
   padding: 10px;
   margin-bottom: 20px;
   background-color: #111111;

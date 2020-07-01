@@ -21,5 +21,7 @@ Rails.application.routes.draw do
   get 'user/:id' => 'pages#profile'
   get 'post/:id' => 'pages#post'
   get 'explore' => 'pages#explore'
+  get 'hashtags/',         to: 'hashtags#index',     as: :hashtags
+  get 'hashtags/:hashtag', to: 'hashtags#show',      as: :hashtag
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

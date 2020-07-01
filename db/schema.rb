@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_06_184900) do
+ActiveRecord::Schema.define(version: 2020_06_30_161120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,22 @@ ActiveRecord::Schema.define(version: 2020_04_06_184900) do
     t.index ["followed_id"], name: "index_relationships_on_followed_id"
     t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
+  end
+
+  create_table "simple_hashtag_hashtaggings", force: :cascade do |t|
+    t.bigint "hashtag_id"
+    t.string "hashtaggable_type"
+    t.bigint "hashtaggable_id"
+    t.index ["hashtag_id"], name: "index_hashtaggings_hashtag"
+    t.index ["hashtaggable_id", "hashtaggable_type"], name: "index_hashtaggings_hashtaggable_id_hashtaggable_type"
+    t.index ["hashtaggable_type", "hashtaggable_id"], name: "index_hashtaggings_hashtaggable"
+  end
+
+  create_table "simple_hashtag_hashtags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_hashtags_name"
   end
 
   create_table "users", force: :cascade do |t|

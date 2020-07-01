@@ -226,12 +226,7 @@ video {
     width: 100%; }
 
   .hide {
-    display: none;
-  }
-  textarea, input, input:focus{
-    width: 50%;
-  }
-}
+    display: none; } }
 @media only screen and (min-width: 700px) {
   .show {
     display: none; } }
@@ -257,30 +252,26 @@ label {
   float: left;
   display: inline-block;
   clear: left;
-  text-align: right;
-  position: relative;
-  width: 20%;
+  text-align: left;
+  width: 15%;
 }
 
 textarea, input, input:focus{
-  width: 75%;
+  width: 15%;
   display: inline-block;
   float: left;
   resize: none;
-  border: solid;
-  border-width: 1px;
-  margin: 1px;
+  border: dotted;
+  border-width: thin;
   border-color: #c8c8c8;
   color: #C8C8C8; 
   background: #22222200;
   outline-color: #C8C8C800;
-  position: relative;
   font: inherit;
 }
 input:focus{
   border: solid;
-  border-width: 2px;
-  margin: 0px;
+  border-width: thin;
 }
 
 /*# sourceMappingURL=main.css.map */
@@ -288,13 +279,7 @@ input:focus{
 form {
   display: inline;
 }
-input[type=checkbox], input[type=checkbox]:focus{
-  height: calc(var(--fluid-font));
-  width: calc(var(--fluid-font));
-  border: 1px;
-  margin: 1px;
-}
-input[type="submit"], input[type="submit"]:focus, a#abutton{
+input[type="submit"], input[type="submit"]:focus{
   align-items: normal;
   background-color: rgba(0,0,0,0);
   border-color: rgb(0, 0, 238);
@@ -302,14 +287,17 @@ input[type="submit"], input[type="submit"]:focus, a#abutton{
   box-sizing: content-box;
   color: #C8C8C8; 
   cursor: pointer;
+  display: inline;
   font: inherit;
+  height: auto;
   padding: 0;
-  padding-left: 20%;
   perspective-origin: 0 0;
   text-align: start;
   transform-origin: 0 0;
-  width: 100%;
+  width: auto;
   -moz-appearance: none;
+  -webkit-logical-height: 1em; /* Chrome ignores auto, so we have to use this hack to set the correct height  */
+  -webkit-logical-width: auto; /* Chrome ignores auto, but here for completeness */
   font-weight: 400;
 }
 

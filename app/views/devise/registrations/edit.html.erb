@@ -17,15 +17,15 @@
     <%= f.label :email %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %><br />
 
-    <%= f.label :password %>:
+    <%= f.label :password %>
     <%= f.password_field :password, autocomplete: "new-password" %><br />
 
-    <%= f.label :password_confirmation %>:
+    <%= f.label "confirm" %>
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %><br />
 
-    <%= f.label :current_password %>:
+    <%= f.label "current" %>
     <%= f.password_field :current_password, autocomplete: "current-password" %><br />
 
-    <%= f.submit "Update" %>
+    <%= f.submit "Update" %><br /><br />
   <% end %>
 </div>

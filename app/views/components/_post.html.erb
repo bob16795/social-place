@@ -1,14 +1,14 @@
 <% if user_signed_in? %>
   <% if !current_user.blocking?(@p.user) %>
     <div class="box">
-        <a href="/user/<%= @p.user.username %>"><%= @p.user.username %></a> - <%= @p.created_at.to_formatted_s(:short) %> - <%= @p.likes.count %> Likes
+        <a href="/user/<%= @p.user.username %>/"><%= @p.user.username %></a> - <%= @p.created_at.to_formatted_s(:short) %> - <%= @p.likes.count %> Likes
         <%= markdown(@p.content).html_safe %>
         <%= render "/components/post_buttons"%>
     </div>
   <% end %>
 <% else %>
   <div class="box">
-    <a href="/user/<%= @p.user.username %>"><%= @p.user.username %></a> - <%= @p.created_at.to_formatted_s(:short) %> - <%= @p.likes.count %> Likes
+    <a href="/user/<%= @p.user.username %>/"><%= @p.user.username %></a> - <%= @p.created_at.to_formatted_s(:short) %> - <%= @p.likes.count %> Likes
     <%= markdown(@p.content).html_safe %>
     <%= render "/components/post_buttons"%>
   </div>

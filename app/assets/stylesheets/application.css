@@ -339,8 +339,9 @@ body {
   margin-bottom: 20px;
   background-color: #111111;
 }
-textarea#post_content, input[value="UNLIKE"], input[value="Post"], input[value="DELETE"], input[value="LIKE"]{
+textarea#post_content, input[value="FOLLOW"], input[value="UNFOLLOW"], input[value="UNBLOCK"], input[value="BLOCK"], input[value="UNLIKE"], input[value="Post"], input[value="DELETE"], input[value="LIKE"]{
   float: none;
   padding-left: 0;
   width: auto;
+  font-size: inherit;
 }

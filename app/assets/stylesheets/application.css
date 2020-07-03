@@ -262,7 +262,9 @@ label {
   width: 20%;
 }
 
-textarea, input, input:focus{
+/*textarea, input, input:focus{
+*/
+textarea, input{
   width: 75%;
   display: inline-block;
   float: left;
@@ -294,7 +296,10 @@ input[type=checkbox], input[type=checkbox]:focus{
   border: 1px;
   margin: 1px;
 }
-input[type="submit"], input[type="submit"]:focus, a#abutton{
+input[type="Sign up"], input[value="Sign up"]:focus {
+}
+input[value="Sign up"], input[value="Sign up"]:focus,
+input[value="Log in"], input[value="Log in"]:focus, a#abutton{
   align-items: normal;
   background-color: rgba(0,0,0,0);
   border-color: rgb(0, 0, 238);
@@ -339,9 +344,14 @@ body {
   margin-bottom: 20px;
   background-color: #111111;
 }
-textarea#post_content, input[value="FOLLOW"], input[value="UNFOLLOW"], input[value="UNBLOCK"], input[value="BLOCK"], input[value="UNLIKE"], input[value="Post"], input[value="DELETE"], input[value="LIKE"]{
+textarea#post_content, input[value="FOLLOW"], input[value="UNFOLLOW"], input[value="UNBLOCK"], input[value="BLOCK"], input[value="UNLIKE"], input[value="Post"], input[value="DELETE"], input[value="LIKE"], input[value="SEARCH"]{
   float: none;
+  border-style: none;
   padding-left: 0;
   width: auto;
   font-size: inherit;
+  display: inline;
+}
+textarea#post_content {
+  border-style: solid;
 }

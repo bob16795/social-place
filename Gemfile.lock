@@ -87,6 +87,7 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
+    idn-ruby (0.1.0)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
     listen (3.1.5)
@@ -188,8 +189,14 @@ GEM
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
+    twitter-text (3.1.0)
+      idn-ruby
+      unf (~> 0.1.0)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.7)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (4.0.1)
@@ -233,6 +240,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
+  twitter-text
   tzinfo-data
   web-console (>= 3.3.0)
   webdrivers

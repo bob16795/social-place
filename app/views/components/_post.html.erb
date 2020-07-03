@@ -2,14 +2,18 @@
   <% if !current_user.blocking?(@p.user) %>
     <div class="box">
         <a href="/user/<%= @p.user.username %>/"><%= @p.user.username %></a> - <%= @p.created_at.to_formatted_s(:short) %> - <%= @p.likes.count %> Likes
+        <br/>
         <%= markdown(@p.content).html_safe %>
+        <br/>
         <%= render "/components/post_buttons"%>
     </div>
   <% end %>
 <% else %>
   <div class="box">
     <a href="/user/<%= @p.user.username %>/"><%= @p.user.username %></a> - <%= @p.created_at.to_formatted_s(:short) %> - <%= @p.likes.count %> Likes
+    <br/>
     <%= markdown(@p.content).html_safe %>
+    <br/>
     <%= render "/components/post_buttons"%>
   </div>
 <% end %>

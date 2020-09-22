@@ -3,6 +3,9 @@ class PagesController < ApplicationController
   end
 
   def home
+    if !user_signed_in?
+      redirect_to "/"
+    end
     @posts = Post.all
     @newPost = Post.new
   end

@@ -349,7 +349,6 @@ textarea#post_content, input[value="FOLLOW"], input[value="UNFOLLOW"], input[val
   border-style: none;
   padding-left: 0;
   width: auto;
-  font-size: inherit;
   display: inline;
 }
 textarea#post_content {
